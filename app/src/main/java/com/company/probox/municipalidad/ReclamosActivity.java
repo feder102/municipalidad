@@ -149,8 +149,7 @@ public class ReclamosActivity extends AppCompatActivity {
         //getting name for the image
         String name = editText.getText().toString().trim();
         String description = editDescripcion.getText().toString().trim();
-        //getting the actual path of the image
-        String path = getPath(filePath);
+
 
         //Uploading code
         try {
@@ -158,7 +157,7 @@ public class ReclamosActivity extends AppCompatActivity {
 
             //Creating a multi part request
             new MultipartUploadRequest(this, uploadId, Constants.UPLOAD_URL)
-                    .addFileToUpload(path, "image") //Adding file
+                    .addFileToUpload(mImageFileLocation, "image") //Adding file
                     .addParameter("name", name)
                     .addParameter("description", description)//Adding text parameter to the request
                     .setNotificationConfig(new UploadNotificationConfig())
@@ -186,6 +185,8 @@ public class ReclamosActivity extends AppCompatActivity {
 
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
             filePath = data.getData();
+            //getting the actual path of the image
+            mImageFileLocation = getPath(filePath);
             try {
                 bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), filePath);
                 imageView.setImageBitmap(bitmap);

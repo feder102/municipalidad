@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_noticias"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Noticias" />
+        <item
+            android:id="@+id/nav_intendencia"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Intendencia" />
+        <item
+            android:id="@+id/nav_secretarias"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Reclamos" />
+        <item
+            android:id="@+id/nav_contacto"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Contacto" />
+    </group>
+
+    <item android:title="Comunicaciones">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Compartir" />
+            <item
+                android:id="@+id/nav_salir"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Salir" />
+        </menu>
+    </item>
+
+</menu>
